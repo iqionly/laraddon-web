@@ -10,7 +10,7 @@ declare module 'vue-router' {
     icon?: Component,
 
     /** Indexing route */
-    index?: number,
+    index: number,
     
     /** Custom flags */
     isAdmin?: boolean

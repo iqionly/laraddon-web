@@ -5,4 +5,5 @@ export default interface RouteType {
     name: string|RouteRecordNameGeneric|null,
     path: string,
     icon?: Component|null,
+    unread?: number,
 }

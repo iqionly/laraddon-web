@@ -29,15 +29,17 @@
 import { Bars3Icon } from '@heroicons/vue/16/solid'
 
 import Navigation from './Navigation.vue';
-import ToggleDarkMode from "../Components/Buttons/ToggleDarkMode.vue";
-import { provide, ref, readonly } from 'vue';
+import ToggleDarkMode from '../Components/Buttons/ToggleDarkMode.vue';
+import { provide, ref } from 'vue';
 
-const collapsed = ref(('collapsed' in localStorage) ? localStorage.collapsed : false);
+const defaultCollapsed = ('collapsed' in localStorage) ? localStorage.collapsed : false;
+
+const collapsed = ref(defaultCollapsed);
 
 const toggleSidebar = () => {
   collapsed.value = !collapsed.value;
   localStorage.collapsed = collapsed.value;
 }
 
-provide('collapsed', { collapsed, toggleSidebar});
+provide('collapsed', collapsed);
 </script>
