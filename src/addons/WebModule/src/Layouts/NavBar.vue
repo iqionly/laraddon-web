@@ -8,7 +8,7 @@
         </div>
 
         <!-- Links -->
-        <div class="hidden sm:flex sm:space-x-8 items-center">
+        <div class="sm:flex sm:space-x-8 items-center">
           <RouterLink 
             to="/" 
             class="text-gray-700 hover:text-indigo-600 transition-colors"
@@ -17,7 +17,7 @@
           </RouterLink>
           <RouterLink 
             to="/about" 
-            class="text-gray-700 hover:text-indigo-600 transition-colors"
+            class="text-gray-700 hover:text-indigo-600 transition-colors"x
           >
             About
           </RouterLink>

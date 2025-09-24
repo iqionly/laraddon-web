@@ -1,10 +1,7 @@
 <template>
-  <div class="min-h-screen bg-gray-100">
-    <NavBar />
-    <router-view />
-  </div>
+  <WebModule/>
 </template>
 
 <script setup>
-import NavBar from "./components/NavBar.vue";
+    import WebModule from '@addons/WebModule';
 </script>
