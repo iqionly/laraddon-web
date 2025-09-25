@@ -19,9 +19,10 @@
 <script setup lang="ts">
 import { onBeforeMount, inject, ref, type Ref } from 'vue';
 import type { RouteRecord } from 'vue-router';
-import type RouteType from '@addons/WebModule/types/RouteType';
+import type RouteType from '@laraddon/addons/WebModule/types/RouteType';
 
-const collapsed = inject('collapsed');
+const { collapsed } = inject('collapsed', { collapsed: false });
+
 const rootRoutes:Ref<RouteRecord[]> = ref(inject('routes', []));
 
 const listRoutes: RouteType[] = [];
@@ -32,7 +33,7 @@ onBeforeMount(() => {
         return a.meta.index - b.meta.index;
     });
 
-    rootRoutes.value.map((route, i) => {
+    rootRoutes.value.map((route) => {
         listRoutes.push({
             name: route.name ? route.name : route.children[0]?.name,
             path: route.path,

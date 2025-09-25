@@ -8,7 +8,7 @@
 
 <script setup lang="ts">
 import { useRoute, useRouter } from 'vue-router'
-import findChild from '@addons/WebModule/shared/find-route-child.ts'
+import findChild from '@laraddon/addons/WebModule/shared/find-route-child.ts'
 
 const route = useRoute()
 const router = useRouter()

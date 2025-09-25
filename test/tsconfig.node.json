@@ -4,6 +4,7 @@
     "target": "ES2023",
     "lib": ["ES2023"],
     "module": "ESNext",
+    "types": [],
     "skipLibCheck": true,
 
     /* Bundler mode */
@@ -19,11 +20,7 @@
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true,
-    "paths": {
-      "@laraddon/addons/*": ["./src/addons/*/index.vue"]
-    }
+    "noUncheckedSideEffectImports": true
   },
-  "typeRoots": ["./src/types", "./node_modules/@types"],
   "include": ["vite.config.ts"]
 }

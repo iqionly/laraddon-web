@@ -15,11 +15,20 @@
 
                 <!-- Action Page -->
                 <div class="size-fit">
-                    <ButtonsGroup />
+                    <ButtonsGroup>
+                        <Button>
+                            <ChevronLeftIcon class="size-5" />
+                        </Button>
+
+                        <Button>
+                            <ChevronRightIcon class="size-5" />
+                        </Button>
+                    </ButtonsGroup>
                 </div>
             </header>
 
             <!-- Profile -->
+             
             <!-- Breadcumb -->
             <Breadcrumb />
 
@@ -37,11 +46,18 @@
 import { ref } from 'vue';
 import { useSafeProps } from './shared/use-safe-props';
 
+/**
+ * Styles
+ */
+import './src/style.css';
+
 import Sidebar from './src/Layouts/Sidebar.vue';
 import Breadcrumb from './src/Components/Breadcrumb.vue';
 import ButtonsGroup from './src/Components/Buttons/ButtonsGroup.vue';
 
-import SearchInput from '@addons/SearchInput';
+import SearchInput from '@laraddon/addons/SearchInput';
+import Button from './src/Components/Buttons/Button.vue';
+import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/16/solid';
 
 const search = ref(null);
 </script>

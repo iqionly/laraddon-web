@@ -1,4 +1,4 @@
-import { defineConfig, type Alias, type AliasOptions } from "vite";
+import { defineConfig, type Alias } from "vite";
 import vue from "@vitejs/plugin-vue";
 import tailwindcss from '@tailwindcss/vite'
 
@@ -10,8 +10,8 @@ const DEFAULT_CONFIG = {
 };
 
 const DEFAULT_ALIAS: Alias[] = [
-    { find: '@addons', replacement: path.resolve(path.dirname('/'), "src/addons") },
-    { find: '@laraddon', replacement: path.resolve(path.dirname('/'), 'src') }
+    { find: '@laraddon', replacement: path.resolve(path.dirname('/'), 'src') },
+    { find: '@laraddon/addons', replacement: path.resolve(path.dirname('/'), 'src/addons') }
 ];
 
 function aliasLaraModule(): Alias[] {
@@ -51,6 +51,6 @@ export default defineConfig({
     ],
     resolve: {
         alias: aliasLaraModule(),
-        extensions: ['.js', '.ts', '.vue']
-    },
+        extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.vue']
+    }
 });

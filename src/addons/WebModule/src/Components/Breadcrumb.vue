@@ -15,7 +15,7 @@
 import { ref, watch } from 'vue';
 import { RouterLink, useRoute } from 'vue-router';
 import { ChevronRightIcon } from '@heroicons/vue/16/solid';
-import { RouteTyping, listData } from '@addons/WebModule/shared/route-typing';
+import { RouteTyping, listData } from '@laraddon/addons/WebModule/shared/route-typing';
 
 const route = useRoute();
 const matched = ref(route);

@@ -33,7 +33,7 @@ export default defineConfig({
     resolve: {
         alias: {
             // Map Addons folder so it can be imported in JS
-            "@addons": path.resolve(__dirname, "Addons"),
+            "@laraddon/addons": path.resolve(__dirname, "Addons"),
         },
     },
 });
@@ -42,7 +42,7 @@ export default defineConfig({
 Now in your Vue code, you can do:
 
 ```js
-import CustomDashboard from "@addons/Dashboard/CustomDashboard.vue";
+import CustomDashboard from "@laraddon/addons/Dashboard/CustomDashboard.vue";
 ```
 
 ---
@@ -84,7 +84,7 @@ In `resources/js/app.js`:
 import { bootApp } from "laraddon-web";
 
 // import Addon components or pages from Laravel Addons folder
-import CustomDashboard from "@addons/Dashboard/CustomDashboard.vue";
+import CustomDashboard from "@laraddon/addons/Dashboard/CustomDashboard.vue";
 
 bootApp("#app", {
   components: {
@@ -127,7 +127,7 @@ laravel-project/
 You’ll probably want `laraddon-web` to also **autoload CSS/JS from Addons folder**, not only explicit imports. That can be done by using **Vite’s glob import** in the Laravel project:
 
 ```js
-const modules = import.meta.glob("@addons/**/*.vue", { eager: true });
+const modules = import.meta.glob("@laraddon/addons/**/*.vue", { eager: true });
 ```
 
 Then pass them into `bootApp`.

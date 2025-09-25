@@ -2,7 +2,9 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import { router, routes } from "./routes/index.ts";
 
-function bootApp(el: string | HTMLElement, options: any = {}) {
+import "./style.css";
+
+export default function bootApp(el: string | HTMLElement, options: any = {}) {
   const app = createApp(App);
 
   app.provide('routes', routes);
@@ -25,5 +27,3 @@ function bootApp(el: string | HTMLElement, options: any = {}) {
   app.use(router);
   app.mount(el);
 }
-
-bootApp('#app');

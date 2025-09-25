@@ -25,21 +25,21 @@
     </aside>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Bars3Icon } from '@heroicons/vue/16/solid'
 
 import Navigation from './Navigation.vue';
 import ToggleDarkMode from '../Components/Buttons/ToggleDarkMode.vue';
-import { provide, ref } from 'vue';
+import { provide, ref, type Ref } from 'vue';
 
-const defaultCollapsed = ('collapsed' in localStorage) ? localStorage.collapsed : false;
+const defaultCollapsed: boolean = ('collapsed' in localStorage) ? localStorage.collapsed : false;
 
-const collapsed = ref(defaultCollapsed);
+const collapsed: Ref<boolean> = ref(defaultCollapsed);
 
 const toggleSidebar = () => {
   collapsed.value = !collapsed.value;
   localStorage.collapsed = collapsed.value;
 }
 
-provide('collapsed', collapsed);
+provide('collapsed', { collapsed, toggleSidebar });
 </script>

@@ -12,11 +12,12 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
-      "@addons/*": ["src/addons/*", "src/addons/*/index.vue", "src/addons/*/main.vue"]
+      "@laraddon/*": ["src/*"],
+      "@laraddon/addons/*": ["src/addons/*", "src/addons/*/index.vue", "src/addons/*/main.vue"]
     },
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
   },
   "typeRoots": ["./src/types", "./node_modules/@types"],
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "src/App.vue"]
 }

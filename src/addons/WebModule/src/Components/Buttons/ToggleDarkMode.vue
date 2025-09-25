@@ -7,12 +7,12 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { MoonIcon } from '@heroicons/vue/16/solid'
 
 import { inject } from 'vue';
 
-const { collapsed } = inject('collapsed', false);
+const { collapsed } = inject('collapsed', { collapsed: false });
 
 if (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) {
     localStorage.theme = "dark";
