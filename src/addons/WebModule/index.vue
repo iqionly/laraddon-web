@@ -55,7 +55,7 @@ import Sidebar from './src/Layouts/Sidebar.vue';
 import Breadcrumb from './src/Components/Breadcrumb.vue';
 import ButtonsGroup from './src/Components/Buttons/ButtonsGroup.vue';
 
-import SearchInput from '@laraddon/addons/SearchInput';
+import SearchInput from '@laraddon/addons/SearchInput/Views';
 import Button from './src/Components/Buttons/Button.vue';
 import { ChevronLeftIcon, ChevronRightIcon } from '@heroicons/vue/16/solid';
 

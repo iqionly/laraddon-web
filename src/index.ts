@@ -27,3 +27,5 @@ export default function bootApp(el: string | HTMLElement, options: any = {}) {
   app.use(router);
   app.mount(el);
 }
+
+bootApp('#app');

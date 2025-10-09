@@ -10,8 +10,8 @@ const DEFAULT_CONFIG = {
 };
 
 const DEFAULT_ALIAS: Alias[] = [
-    { find: '@laraddon', replacement: path.resolve(path.dirname('/'), 'src') },
-    { find: '@laraddon/addons', replacement: path.resolve(path.dirname('/'), 'src/addons') }
+    { find: '@laraddon', replacement: path.resolve(__dirname, 'src') },
+    { find: '@laraddon/addons', replacement: path.resolve(__dirname, 'src/addons') }
 ];
 
 function aliasLaraModule(): Alias[] {
@@ -19,7 +19,7 @@ function aliasLaraModule(): Alias[] {
     return dirs.reduce<Alias[]>((result, name) => {
         const fullPath = path.join(DEFAULT_CONFIG.sysPathAddons, '/' + name);
         console.log(fullPath);
-        result.push({ find: name, replacement: path.resolve(path.dirname('/'), fullPath) });
+        result.push({ find: name, replacement: path.resolve(__dirname, fullPath) });
         return result;
     }, DEFAULT_ALIAS);
 }
@@ -27,7 +27,7 @@ function aliasLaraModule(): Alias[] {
 export default defineConfig({
     build: {
         lib: {
-            entry: path.resolve(path.dirname('/'), 'src/index.ts'),
+            entry: path.resolve(__dirname, 'src/index.ts'),
             name: 'laraddon',
             // the proper extensions will be added
             fileName: 'index',
