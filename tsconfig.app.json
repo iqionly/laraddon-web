@@ -12,6 +12,7 @@
     "noUncheckedSideEffectImports": true,
     "baseUrl": ".",
     "paths": {
+      "@addons/*": ["addons/*"],
       "@laraddon/*": ["src/*"],
       "@laraddon/addons/*": ["src/addons/*", "src/addons/*/index.vue", "src/addons/*/main.vue"]
     },

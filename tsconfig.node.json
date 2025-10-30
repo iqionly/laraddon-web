@@ -21,6 +21,8 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
     "paths": {
+      "@addons/*": ["./addons/*"],
+      "@laraddon/*": ["./src/*"],
       "@laraddon/addons/*": ["./src/addons/*/index.vue"]
     }
   },

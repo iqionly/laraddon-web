@@ -1,4 +1,4 @@
-import { defineConfig, type Alias } from "vite";
+import { defineConfig, searchForWorkspaceRoot, type Alias } from "vite";
 import vue from "@vitejs/plugin-vue";
 import tailwindcss from '@tailwindcss/vite'
 
@@ -6,15 +6,16 @@ import path from "path";
 import { readdirSync } from 'node:fs';
 
 const DEFAULT_CONFIG = {
-    sysPathAddons: 'src/addons'
+    sysPathAddons: 'addons'
 };
 
 const DEFAULT_ALIAS: Alias[] = [
+    { find: '@addons', replacement: path.resolve(__dirname, DEFAULT_CONFIG.sysPathAddons) },
     { find: '@laraddon', replacement: path.resolve(__dirname, 'src') },
     { find: '@laraddon/addons', replacement: path.resolve(__dirname, 'src/addons') }
 ];
 
-function aliasLaraModule(): Alias[] {
+function aliases(): Alias[] {
     const dirs = readdirSync(DEFAULT_CONFIG.sysPathAddons);
     return dirs.reduce<Alias[]>((result, name) => {
         const fullPath = path.join(DEFAULT_CONFIG.sysPathAddons, '/' + name);
@@ -50,7 +51,14 @@ export default defineConfig({
         tailwindcss(),
     ],
     resolve: {
-        alias: aliasLaraModule(),
+        alias: aliases(),
         extensions: ['.mjs', '.js', '.mts', '.ts', '.jsx', '.tsx', '.json', '.vue']
+    },
+    server: {
+        fs: {
+            allow: [
+                searchForWorkspaceRoot(process.cwd()),
+            ]
+        }
     }
 });

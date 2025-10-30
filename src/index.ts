@@ -3,7 +3,6 @@ import App from "./App.vue";
 import { router, routes } from "./routes/index.ts";
 
 import "./style.css";
-
 export default function bootApp(el: string | HTMLElement, options: any = {}) {
   const app = createApp(App);
 
@@ -14,7 +13,6 @@ export default function bootApp(el: string | HTMLElement, options: any = {}) {
   //   Object.entries(options.components).forEach(([name, component]) => {
   //     app.component(name, component as any);
   //   });
-
   // }
 
   // use addon routes if provided
